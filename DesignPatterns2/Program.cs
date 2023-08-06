@@ -1,6 +1,8 @@
 ﻿using DesignPatterns2.Cap1;
 using DesignPatterns2.Cap2;
 using DesignPatterns2.Cap3;
+using DesignPatterns2.Cap4;
+using DesignPatterns2.Interpreter;
 using System.Data;
 
 /* Factory Method */
@@ -43,3 +45,13 @@ historico.Adiciona(contrato.SalvaEstado());
 Console.WriteLine(contrato.Tipo);
 
 Console.WriteLine(historico.Pega(1).Contrato.Tipo);
+
+/* DSLs e o Interpreter */
+
+IExpressao esquerda = new Soma(new Soma(new Numero(1), new Numero(100)), new Numero(10));
+IExpressao direita = new Subtracao(new Numero(20), new Numero(10));
+IExpressao soma = new Soma(esquerda, direita);
+
+IExpressao raiz = new RaizQuadrada(new Numero(10));
+
+Console.WriteLine(raiz.Avalia());
