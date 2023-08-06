@@ -1,4 +1,6 @@
 ﻿using DesignPatterns2.Cap4;
+using DesignPatterns2.Cap5;
+using DesignPatterns2.Visitor;
 
 namespace DesignPatterns2.Interpreter
 {
@@ -10,6 +12,11 @@ namespace DesignPatterns2.Interpreter
         }
 
         public IExpressao Numero { get; private set; }
+
+        public void Aceita(IVisitor impressora)
+        {
+            throw new NotImplementedException();
+        }
 
         public int Avalia()
         {

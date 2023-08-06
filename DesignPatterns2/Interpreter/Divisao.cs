@@ -1,4 +1,6 @@
 ﻿using DesignPatterns2.Cap4;
+using DesignPatterns2.Cap5;
+using DesignPatterns2.Visitor;
 
 namespace DesignPatterns2.Interpreter
 {
@@ -18,6 +20,11 @@ namespace DesignPatterns2.Interpreter
             int valorEsquerda = Esquerda.Avalia();
             int valorDireita = Direita.Avalia();
             return valorEsquerda / valorDireita;
+        }
+
+        public void Aceita(IVisitor impressora)
+        {
+            throw new NotImplementedException();
         }
     }
 }

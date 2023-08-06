@@ -2,6 +2,7 @@
 using DesignPatterns2.Cap2;
 using DesignPatterns2.Cap3;
 using DesignPatterns2.Cap4;
+using DesignPatterns2.Cap5;
 using DesignPatterns2.Interpreter;
 using System.Data;
 
@@ -52,6 +53,8 @@ IExpressao esquerda = new Soma(new Soma(new Numero(1), new Numero(100)), new Num
 IExpressao direita = new Subtracao(new Numero(20), new Numero(10));
 IExpressao soma = new Soma(esquerda, direita);
 
-IExpressao raiz = new RaizQuadrada(new Numero(10));
+Console.WriteLine(soma.Avalia());
 
-Console.WriteLine(raiz.Avalia());
+/* Visitor */
+ImpressoraVisitor impressora = new ImpressoraVisitor();
+soma.Aceita(impressora);
