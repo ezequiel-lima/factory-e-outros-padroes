@@ -3,6 +3,7 @@ using DesignPatterns2.Cap2;
 using DesignPatterns2.Cap3;
 using DesignPatterns2.Cap4;
 using DesignPatterns2.Cap5;
+using DesignPatterns2.Cap6;
 using DesignPatterns2.Interpreter;
 using System.Data;
 
@@ -58,3 +59,11 @@ Console.WriteLine(soma.Avalia());
 /* Visitor */
 ImpressoraVisitor impressora = new ImpressoraVisitor();
 soma.Aceita(impressora);
+
+/* Bridge */
+
+IMensagem mensagem = new MensagemAdm("Vitor");
+IEnviador enviador = new EnviaPorEmail();
+mensagem.Enviador = enviador;
+
+mensagem.Envia();
