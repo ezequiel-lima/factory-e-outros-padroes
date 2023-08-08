@@ -5,6 +5,7 @@ using DesignPatterns2.Cap4;
 using DesignPatterns2.Cap5;
 using DesignPatterns2.Cap6;
 using DesignPatterns2.Cap7;
+using DesignPatterns2.Cap3;
 using DesignPatterns2.Cap8;
 using System.Xml.Serialization;
 using DesignPatterns2.Interpreter;
@@ -95,3 +96,24 @@ cliente.DataNascimento = DateTime.Now;
 var xml = new GeradorXml().GeraXml(cliente);
 
 Console.WriteLine(xml);
+
+/* Facade Apenas Ilustrativo */
+
+//string cpf = "1234";
+
+////EmpresaFacade facade =  new EmpresaFacade();
+//EmpresaFacade facade = new EmpresaFacadeSingleton().Instancia;
+
+//Cliente cliente = facade.BuscaCliente(cpf);
+
+//var fatura = facade.CriaFatura(cliente, 5000);
+//facede.GeraCobranca(Tipo.Boleto, fatura);
+
+//Cliente cliente = new ClienteDao().BuscarPorCPf(cpf);
+//Fatura fatura = new Fatura(cliente, 5000);
+
+//Cobranca cobranca = new Cobranca(Tipo.Boleto, fatura);
+//cobranca.Emite();
+
+//ContatoCliente contato = new ContatoCliente(cliente, cobranca);
+//contato.Dispara();
