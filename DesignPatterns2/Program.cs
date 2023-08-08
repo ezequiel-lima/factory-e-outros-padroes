@@ -4,6 +4,7 @@ using DesignPatterns2.Cap3;
 using DesignPatterns2.Cap4;
 using DesignPatterns2.Cap5;
 using DesignPatterns2.Cap6;
+using DesignPatterns2.Cap7;
 using DesignPatterns2.Interpreter;
 using System.Data;
 
@@ -67,3 +68,16 @@ IEnviador enviador = new EnviaPorEmail();
 mensagem.Enviador = enviador;
 
 mensagem.Envia();
+
+/* Command */
+
+FilaDeTrabalho fila = new FilaDeTrabalho();
+Pedido pedido1 = new Pedido("Mauricio", 250);
+Pedido pedido2 = new Pedido("Gustavo", 136);
+
+fila.Adiciona(new PagaPedido(pedido1));
+fila.Adiciona(new PagaPedido(pedido2));
+
+fila.Adiciona(new FinalizaPedido(pedido1));
+
+fila.Processa();
