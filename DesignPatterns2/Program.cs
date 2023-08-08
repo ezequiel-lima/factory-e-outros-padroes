@@ -5,6 +5,8 @@ using DesignPatterns2.Cap4;
 using DesignPatterns2.Cap5;
 using DesignPatterns2.Cap6;
 using DesignPatterns2.Cap7;
+using DesignPatterns2.Cap8;
+using System.Xml.Serialization;
 using DesignPatterns2.Interpreter;
 using System.Data;
 
@@ -81,3 +83,15 @@ fila.Adiciona(new PagaPedido(pedido2));
 fila.Adiciona(new FinalizaPedido(pedido1));
 
 fila.Processa();
+
+/* Adapter */
+
+Cliente cliente = new Cliente();
+
+cliente.Nome = "Ezequiel";
+cliente.Endereco = "Rua teste";
+cliente.DataNascimento = DateTime.Now;
+
+var xml = new GeradorXml().GeraXml(cliente);
+
+Console.WriteLine(xml);
